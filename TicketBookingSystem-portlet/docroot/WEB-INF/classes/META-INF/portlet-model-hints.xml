@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.lftechnology.ticketbookingsystem.admin.model.Hall">
+		<field name="id" type="long" />
+		<field name="hallname" type="String" />
+		<field name="contact_no" type="String" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+	<model name="com.lftechnology.ticketbookingsystem.admin.model.Movie">
+		<field name="id" type="long" />
+		<field name="moviename" type="String" />
+		<field name="directorname" type="String" />
+		<field name="shift_id" type="long" />
+		<field name="hall_id" type="long" />
+		<field name="ticket_id" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+	<model name="com.lftechnology.ticketbookingsystem.admin.model.Shift">
+		<field name="id" type="long" />
+		<field name="shiftname" type="String" />
+		<field name="time" type="String" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+	<model name="com.lftechnology.ticketbookingsystem.admin.model.Ticket">
+		<field name="id" type="long" />
+		<field name="ticketname" type="String" />
+		<field name="price" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+</model-hints>

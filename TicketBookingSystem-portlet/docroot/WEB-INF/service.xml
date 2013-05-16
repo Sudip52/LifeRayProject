@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder
+	package-path="com.lftechnology.ticketbookingsystem.admin">
+	<author>sudipshrestha</author>
+	<namespace>ADMN</namespace>
+
+	<entity name="Movie" local-service="true" remote-service="false">
+
+		<!-- PK fields -->
+
+		<column name="id" type="long" primary="true" />
+		<column name="moviename" type="String"></column>
+		<column name="directorname" type="String"></column>
+		<column name="shift_id" type="long"></column>
+		<column name="hall_id" type="long"></column>
+		<column name="ticket_id" type="long"></column>
+		
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		
+	</entity>
+	<entity name = "Shift" local-service="true" remote-service="false">
+		
+<!-- 		PK fields -->
+		<column name="id" type="long" primary="true" />
+		<column name="shiftname" type="String"></column>
+		<column name="time" type="String"></column>
+	
+<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+			
+	
+	</entity>
+	
+	<entity name="Hall" local-service="true" remote-service="false">
+		
+		<column name="id" type="long" primary="true" />
+		<column name="hallname" type="String"></column>
+		<column name="contact_no" type="String"></column>
+	
+<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+			
+	
+	
+	</entity>
+	
+	<entity name="Ticket" local-service="true" remote-service="false">
+	
+		<column name="id" type="long" primary="true" />
+		
+		<column name="ticketname" type="String"></column>
+<!-- 		<column name="" type="long"></column> -->
+<!-- 		<column name="hall_id" type="long"></column> -->
+		<column name="price" type="long"></column>
+	
+<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+			
+	
+	</entity>
+</service-builder>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.lftechnology.ticketbookingsystem.admin.service.HallLocalService" class="com.lftechnology.ticketbookingsystem.admin.service.impl.HallLocalServiceImpl" />
+	<bean id="com.lftechnology.ticketbookingsystem.admin.service.persistence.HallPersistence" class="com.lftechnology.ticketbookingsystem.admin.service.persistence.HallPersistenceImpl" parent="basePersistence" />
+	<bean id="com.lftechnology.ticketbookingsystem.admin.service.MovieLocalService" class="com.lftechnology.ticketbookingsystem.admin.service.impl.MovieLocalServiceImpl" />
+	<bean id="com.lftechnology.ticketbookingsystem.admin.service.persistence.MoviePersistence" class="com.lftechnology.ticketbookingsystem.admin.service.persistence.MoviePersistenceImpl" parent="basePersistence" />
+	<bean id="com.lftechnology.ticketbookingsystem.admin.service.ShiftLocalService" class="com.lftechnology.ticketbookingsystem.admin.service.impl.ShiftLocalServiceImpl" />
+	<bean id="com.lftechnology.ticketbookingsystem.admin.service.persistence.ShiftPersistence" class="com.lftechnology.ticketbookingsystem.admin.service.persistence.ShiftPersistenceImpl" parent="basePersistence" />
+	<bean id="com.lftechnology.ticketbookingsystem.admin.service.TicketLocalService" class="com.lftechnology.ticketbookingsystem.admin.service.impl.TicketLocalServiceImpl" />
+	<bean id="com.lftechnology.ticketbookingsystem.admin.service.persistence.TicketPersistence" class="com.lftechnology.ticketbookingsystem.admin.service.persistence.TicketPersistenceImpl" parent="basePersistence" />
+</beans>

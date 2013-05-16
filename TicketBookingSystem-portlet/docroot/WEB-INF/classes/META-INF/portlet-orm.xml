@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.lftechnology.ticketbookingsystem.admin.model.impl.HallModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="hallname" />
+			<basic name="contact_no" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.lftechnology.ticketbookingsystem.admin.model.impl.MovieModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="moviename" />
+			<basic name="directorname" />
+			<basic name="shift_id" />
+			<basic name="hall_id" />
+			<basic name="ticket_id" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.lftechnology.ticketbookingsystem.admin.model.impl.ShiftModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="shiftname" />
+			<basic name="time">
+				<column name="TIME_" />
+			</basic>
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.lftechnology.ticketbookingsystem.admin.model.impl.TicketModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="ticketname" />
+			<basic name="price" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.lftechnology.ticketbookingsystem.admin.model.impl.HallImpl" name="Hall">
+		<table name="ADMN_Hall" />
+		<attributes />
+	</entity>
+	<entity class="com.lftechnology.ticketbookingsystem.admin.model.impl.MovieImpl" name="Movie">
+		<table name="ADMN_Movie" />
+		<attributes />
+	</entity>
+	<entity class="com.lftechnology.ticketbookingsystem.admin.model.impl.ShiftImpl" name="Shift">
+		<table name="ADMN_Shift" />
+		<attributes />
+	</entity>
+	<entity class="com.lftechnology.ticketbookingsystem.admin.model.impl.TicketImpl" name="Ticket">
+		<table name="ADMN_Ticket" />
+		<attributes />
+	</entity>
+</entity-mappings>
