@@ -278,6 +278,23 @@ public class ShiftLocalServiceUtil {
 		return getService().update(shift);
 	}
 
+	public static com.lftechnology.ticketbookingsystem.admin.model.Shift get(
+		long id) throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().get(id);
+	}
+
+	public static java.util.List<com.lftechnology.ticketbookingsystem.admin.model.Shift> fecthAll()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().fecthAll();
+	}
+
+	public static com.lftechnology.ticketbookingsystem.admin.model.Shift delete(
+		long id)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().delete(id);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

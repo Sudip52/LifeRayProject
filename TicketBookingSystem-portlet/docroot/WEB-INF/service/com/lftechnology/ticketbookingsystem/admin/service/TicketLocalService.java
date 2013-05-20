@@ -251,4 +251,16 @@ public interface TicketLocalService extends BaseLocalService,
 		com.lftechnology.ticketbookingsystem.admin.model.Ticket ticket)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public com.lftechnology.ticketbookingsystem.admin.model.Ticket get(long id)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List<com.lftechnology.ticketbookingsystem.admin.model.Ticket> fecthAll()
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public com.lftechnology.ticketbookingsystem.admin.model.Ticket delete(
+		long id)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 }

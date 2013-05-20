@@ -25,8 +25,8 @@ public class AdminActionUtil {
 		
 		movie.setId(ParamUtil.getLong(request, "id"));
 		
-		movie.setMoviename(ParamUtil.getString(request, "firstname"));
-		movie.setDirectorname(ParamUtil.getString(request, "director"));
+		movie.setMoviename(ParamUtil.getString(request, "moviename"));
+		movie.setDirectorname(ParamUtil.getString(request, "directorname"));
 		movie.setShift_id(ParamUtil.getLong(request, "shift_id"));
 		movie.setHall_id(ParamUtil.getLong(request, "hall_id"));
 		movie.setTicket_id(ParamUtil.getLong(request, "ticket_id"));

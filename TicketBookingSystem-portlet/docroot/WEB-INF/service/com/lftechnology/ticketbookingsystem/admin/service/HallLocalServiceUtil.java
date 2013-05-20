@@ -280,6 +280,23 @@ public class HallLocalServiceUtil {
 		return getService().update(hall);
 	}
 
+	public static com.lftechnology.ticketbookingsystem.admin.model.Hall get(
+		long id) throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().get(id);
+	}
+
+	public static java.util.List<com.lftechnology.ticketbookingsystem.admin.model.Hall> fecthAll()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().fecthAll();
+	}
+
+	public static com.lftechnology.ticketbookingsystem.admin.model.Hall delete(
+		long id)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().delete(id);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

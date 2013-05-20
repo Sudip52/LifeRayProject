@@ -274,8 +274,37 @@ public abstract class MovieLocalServiceBaseImpl extends BaseLocalServiceImpl
 	 *
 	 * @return the hall local service
 	 */
-	
-	
+	public HallLocalService getHallLocalService() {
+		return hallLocalService;
+	}
+
+	/**
+	 * Sets the hall local service.
+	 *
+	 * @param hallLocalService the hall local service
+	 */
+	public void setHallLocalService(HallLocalService hallLocalService) {
+		this.hallLocalService = hallLocalService;
+	}
+
+	/**
+	 * Returns the hall persistence.
+	 *
+	 * @return the hall persistence
+	 */
+	public HallPersistence getHallPersistence() {
+		return hallPersistence;
+	}
+
+	/**
+	 * Sets the hall persistence.
+	 *
+	 * @param hallPersistence the hall persistence
+	 */
+	public void setHallPersistence(HallPersistence hallPersistence) {
+		this.hallPersistence = hallPersistence;
+	}
+
 	/**
 	 * Returns the movie local service.
 	 *
@@ -317,7 +346,72 @@ public abstract class MovieLocalServiceBaseImpl extends BaseLocalServiceImpl
 	 *
 	 * @return the shift local service
 	 */
-	
+	public ShiftLocalService getShiftLocalService() {
+		return shiftLocalService;
+	}
+
+	/**
+	 * Sets the shift local service.
+	 *
+	 * @param shiftLocalService the shift local service
+	 */
+	public void setShiftLocalService(ShiftLocalService shiftLocalService) {
+		this.shiftLocalService = shiftLocalService;
+	}
+
+	/**
+	 * Returns the shift persistence.
+	 *
+	 * @return the shift persistence
+	 */
+	public ShiftPersistence getShiftPersistence() {
+		return shiftPersistence;
+	}
+
+	/**
+	 * Sets the shift persistence.
+	 *
+	 * @param shiftPersistence the shift persistence
+	 */
+	public void setShiftPersistence(ShiftPersistence shiftPersistence) {
+		this.shiftPersistence = shiftPersistence;
+	}
+
+	/**
+	 * Returns the ticket local service.
+	 *
+	 * @return the ticket local service
+	 */
+	public TicketLocalService getTicketLocalService() {
+		return ticketLocalService;
+	}
+
+	/**
+	 * Sets the ticket local service.
+	 *
+	 * @param ticketLocalService the ticket local service
+	 */
+	public void setTicketLocalService(TicketLocalService ticketLocalService) {
+		this.ticketLocalService = ticketLocalService;
+	}
+
+	/**
+	 * Returns the ticket persistence.
+	 *
+	 * @return the ticket persistence
+	 */
+	public TicketPersistence getTicketPersistence() {
+		return ticketPersistence;
+	}
+
+	/**
+	 * Sets the ticket persistence.
+	 *
+	 * @param ticketPersistence the ticket persistence
+	 */
+	public void setTicketPersistence(TicketPersistence ticketPersistence) {
+		this.ticketPersistence = ticketPersistence;
+	}
 
 	/**
 	 * Returns the counter local service.

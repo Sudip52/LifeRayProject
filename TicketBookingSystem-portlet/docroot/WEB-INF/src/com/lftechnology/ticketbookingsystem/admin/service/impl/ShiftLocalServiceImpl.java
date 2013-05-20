@@ -14,6 +14,11 @@
 
 package com.lftechnology.ticketbookingsystem.admin.service.impl;
 
+import java.util.List;
+
+
+import com.lftechnology.ticketbookingsystem.admin.NoSuchMovieException;
+import com.lftechnology.ticketbookingsystem.admin.model.Movie;
 import com.lftechnology.ticketbookingsystem.admin.model.Shift;
 import com.lftechnology.ticketbookingsystem.admin.service.ShiftLocalServiceUtil;
 import com.lftechnology.ticketbookingsystem.admin.service.base.ShiftLocalServiceBaseImpl;
@@ -41,13 +46,14 @@ public class ShiftLocalServiceImpl extends ShiftLocalServiceBaseImpl {
 	 * Never reference this interface directly. Always use {@link com.lftechnology.ticketbookingsystem.admin.service.ShiftLocalServiceUtil} to access the shift local service.
 	 */
 	
-	public Shift addShift(Shift shift)
+	public Shift addShift(Shift shift) throws SystemException
 	{
 		Shift newShift= null;
 		
 		try {
-			newShift = ShiftLocalServiceUtil.getShift(shift.getId());
-		} catch (PortalException | SystemException e) {
+			newShift = shiftPersistence.create(counterLocalService.increment(Shift.class.getName()));
+			//newShift = ShiftLocalServiceUtil.getShift(shift.getId());
+		} catch (SystemException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -55,7 +61,14 @@ public class ShiftLocalServiceImpl extends ShiftLocalServiceBaseImpl {
 		newShift.setShiftname(shift.getShiftname());
 		newShift.setTime(shift.getTime());
 		
+		newShift.setCompanyId(shift.getCompanyId());
+		newShift.setGroupId(shift.getGroupId());
+		
+		//commit changes to the db
+		newShift = shiftPersistence.update(newShift, false);
+		
 		return newShift;
+	
 	}
 	
 	public Shift update(Shift shift) {
@@ -83,5 +96,30 @@ public class ShiftLocalServiceImpl extends ShiftLocalServiceBaseImpl {
 		return newShift;
 	}
 
+	public Shift get(long id) throws SystemException
+	{
+		Shift shift = shiftPersistence.fetchByPrimaryKey(id);
+		return shift;
+	}
+	
+	
+	public List<Shift> fecthAll() throws SystemException
+	{
+		return  shiftPersistence.findAll();
+		
+		
+	}
+	
+	public Shift delete(long id) throws SystemException, PortalException
+	{
+		Shift shift = null;
+		try {
+			shift = shiftPersistence.remove(id);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return shift;			
+	}
 
 }

@@ -119,17 +119,17 @@ public class MovieLocalServiceClp implements MovieLocalService {
 				"com.lftechnology.ticketbookingsystem.admin.model.Movie"
 			};
 
-		_methodName20 = "addShift";
+		_methodName20 = "get";
 
-		_methodParameterTypes20 = new String[] {
-				"com.lftechnology.ticketbookingsystem.admin.model.Shift"
-			};
+		_methodParameterTypes20 = new String[] { "long" };
 
-		_methodName21 = "addHall";
+		_methodName21 = "fecthAll";
 
-		_methodParameterTypes21 = new String[] {
-				"com.lftechnology.ticketbookingsystem.admin.model.Hall"
-			};
+		_methodParameterTypes21 = new String[] {  };
+
+		_methodName22 = "delete";
+
+		_methodParameterTypes22 = new String[] { "long" };
 	}
 
 	public com.lftechnology.ticketbookingsystem.admin.model.Movie addMovie(
@@ -687,23 +687,16 @@ public class MovieLocalServiceClp implements MovieLocalService {
 		return (com.lftechnology.ticketbookingsystem.admin.model.Movie)ClpSerializer.translateOutput(returnObj);
 	}
 
-	public com.lftechnology.ticketbookingsystem.admin.model.Shift addShift(
-		com.lftechnology.ticketbookingsystem.admin.model.Shift shift)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
+	public com.lftechnology.ticketbookingsystem.admin.model.Movie get(long id)
+		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
 			returnObj = _invokableLocalService.invokeMethod(_methodName20,
-					_methodParameterTypes20,
-					new Object[] { ClpSerializer.translateInput(shift) });
+					_methodParameterTypes20, new Object[] { id });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
-				throw (com.liferay.portal.kernel.exception.PortalException)t;
-			}
 
 			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
 				throw (com.liferay.portal.kernel.exception.SystemException)t;
@@ -718,19 +711,45 @@ public class MovieLocalServiceClp implements MovieLocalService {
 			}
 		}
 
-		return (com.lftechnology.ticketbookingsystem.admin.model.Shift)ClpSerializer.translateOutput(returnObj);
+		return (com.lftechnology.ticketbookingsystem.admin.model.Movie)ClpSerializer.translateOutput(returnObj);
 	}
 
-	public com.lftechnology.ticketbookingsystem.admin.model.Hall addHall(
-		com.lftechnology.ticketbookingsystem.admin.model.Hall hall)
+	public java.util.List<com.lftechnology.ticketbookingsystem.admin.model.Movie> fecthAll()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName21,
+					_methodParameterTypes21, new Object[] {  });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.lftechnology.ticketbookingsystem.admin.model.Movie>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public com.lftechnology.ticketbookingsystem.admin.model.Movie delete(
+		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName21,
-					_methodParameterTypes21,
-					new Object[] { ClpSerializer.translateInput(hall) });
+			returnObj = _invokableLocalService.invokeMethod(_methodName22,
+					_methodParameterTypes22, new Object[] { id });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -752,7 +771,7 @@ public class MovieLocalServiceClp implements MovieLocalService {
 			}
 		}
 
-		return (com.lftechnology.ticketbookingsystem.admin.model.Hall)ClpSerializer.translateOutput(returnObj);
+		return (com.lftechnology.ticketbookingsystem.admin.model.Movie)ClpSerializer.translateOutput(returnObj);
 	}
 
 	private InvokableLocalService _invokableLocalService;
@@ -798,4 +817,6 @@ public class MovieLocalServiceClp implements MovieLocalService {
 	private String[] _methodParameterTypes20;
 	private String _methodName21;
 	private String[] _methodParameterTypes21;
+	private String _methodName22;
+	private String[] _methodParameterTypes22;
 }

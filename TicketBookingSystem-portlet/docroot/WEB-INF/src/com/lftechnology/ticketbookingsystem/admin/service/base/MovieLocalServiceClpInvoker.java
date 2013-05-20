@@ -125,17 +125,17 @@ public class MovieLocalServiceClpInvoker {
 				"com.lftechnology.ticketbookingsystem.admin.model.Movie"
 			};
 
-		_methodName56 = "addShift";
+		_methodName56 = "get";
 
-		_methodParameterTypes56 = new String[] {
-				"com.lftechnology.ticketbookingsystem.admin.model.Shift"
-			};
+		_methodParameterTypes56 = new String[] { "long" };
 
-		_methodName57 = "addHall";
+		_methodName57 = "fecthAll";
 
-		_methodParameterTypes57 = new String[] {
-				"com.lftechnology.ticketbookingsystem.admin.model.Hall"
-			};
+		_methodParameterTypes57 = new String[] {  };
+
+		_methodName58 = "delete";
+
+		_methodParameterTypes58 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -249,12 +249,17 @@ public class MovieLocalServiceClpInvoker {
 
 		if (_methodName56.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes56, parameterTypes)) {
-			return MovieLocalServiceUtil.addShift((com.lftechnology.ticketbookingsystem.admin.model.Shift)arguments[0]);
+			return MovieLocalServiceUtil.get(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName57.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes57, parameterTypes)) {
-			return MovieLocalServiceUtil.addHall((com.lftechnology.ticketbookingsystem.admin.model.Hall)arguments[0]);
+			return MovieLocalServiceUtil.fecthAll();
+		}
+
+		if (_methodName58.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
+			return MovieLocalServiceUtil.delete(((Long)arguments[0]).longValue());
 		}
 
 		throw new UnsupportedOperationException();
@@ -304,4 +309,6 @@ public class MovieLocalServiceClpInvoker {
 	private String[] _methodParameterTypes56;
 	private String _methodName57;
 	private String[] _methodParameterTypes57;
+	private String _methodName58;
+	private String[] _methodParameterTypes58;
 }

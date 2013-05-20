@@ -273,6 +273,22 @@ public class HallLocalServiceWrapper implements HallLocalService,
 		return _hallLocalService.update(hall);
 	}
 
+	public com.lftechnology.ticketbookingsystem.admin.model.Hall get(long id)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _hallLocalService.get(id);
+	}
+
+	public java.util.List<com.lftechnology.ticketbookingsystem.admin.model.Hall> fecthAll()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _hallLocalService.fecthAll();
+	}
+
+	public com.lftechnology.ticketbookingsystem.admin.model.Hall delete(long id)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _hallLocalService.delete(id);
+	}
+
 	/**
 	 * @deprecated Renamed to {@link #getWrappedService}
 	 */

@@ -17,9 +17,13 @@ package com.lftechnology.ticketbookingsystem.admin.service.impl;
 
 
 
+import java.util.List;
+
+import com.lftechnology.ticketbookingsystem.admin.NoSuchMovieException;
 import com.lftechnology.ticketbookingsystem.admin.model.Hall;
 import com.lftechnology.ticketbookingsystem.admin.model.Movie;
 import com.lftechnology.ticketbookingsystem.admin.model.Shift;
+import com.lftechnology.ticketbookingsystem.admin.model.Ticket;
 import com.lftechnology.ticketbookingsystem.admin.service.MovieLocalServiceUtil;
 import com.lftechnology.ticketbookingsystem.admin.service.base.MovieLocalServiceBaseImpl;
 
@@ -51,25 +55,24 @@ public class MovieLocalServiceImpl extends MovieLocalServiceBaseImpl {
 		{
 			Movie newMovie = null;
 			
-			try{
-				newMovie = MovieLocalServiceUtil.getMovie(movie.getId());
-				
-				newMovie.setMoviename(movie.getMoviename());
-				newMovie.setDirectorname(movie.getDirectorname());
-				newMovie.setShift_id(movie.getShift_id());
-				newMovie.setHall_id(movie.getHall_id());
-				newMovie.setTicket_id(movie.getTicket_id());
-				
-				newMovie.setCompanyId(movie.getCompanyId());
-				newMovie.setGroupId(movie.getCompanyId());
-				
-			}catch(PortalException ex){
-				
-				ex.printStackTrace();
-			}
+			newMovie = moviePersistence.create(counterLocalService.increment(Movie.class.getName()));
+			
+			newMovie.setMoviename(movie.getMoviename());
+			newMovie.setDirectorname(movie.getDirectorname());
+			newMovie.setShift_id(movie.getShift_id());
+			newMovie.setHall_id(movie.getHall_id());
+			newMovie.setTicket_id(movie.getTicket_id());
+			
+			newMovie.setCompanyId(movie.getCompanyId());
+			newMovie.setGroupId(movie.getCompanyId());
+			
+			//commit changes to the DB
+			newMovie = moviePersistence.update(newMovie, false);
+			
 			return newMovie;
 		}
 		
+		@SuppressWarnings("null")
 		public Movie update(Movie movie) throws PortalException
 		{
 			Movie newMovie = null;
@@ -92,23 +95,33 @@ public class MovieLocalServiceImpl extends MovieLocalServiceBaseImpl {
 		
 			return newMovie;
 		}
-
-		@Override
-		public Shift addShift(Shift shift) throws PortalException,
-				SystemException {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
-		public Hall addHall(Hall hall) throws PortalException, SystemException {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
 		
 		
-	
+		public Movie get(long id) throws SystemException
+		{
+			Movie movie = moviePersistence.fetchByPrimaryKey(id);
+			return movie;
+		}
+		
+		
+		public List<Movie> fecthAll() throws SystemException
+		{
+			return  moviePersistence.findAll();
+			
+			
+		}
+		
+		public Movie delete(long id) throws SystemException, PortalException
+		{
+			Movie movie = null;
+			try {
+				movie = moviePersistence.remove(id);
+			} catch (NoSuchMovieException | SystemException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return movie;			
+		}
 		
 		
 

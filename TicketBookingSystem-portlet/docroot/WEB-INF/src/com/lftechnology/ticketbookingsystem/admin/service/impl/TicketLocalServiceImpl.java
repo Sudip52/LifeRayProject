@@ -14,6 +14,10 @@
 
 package com.lftechnology.ticketbookingsystem.admin.service.impl;
 
+import java.util.List;
+
+import com.lftechnology.ticketbookingsystem.admin.NoSuchTicketException;
+import com.lftechnology.ticketbookingsystem.admin.model.Shift;
 import com.lftechnology.ticketbookingsystem.admin.model.Ticket;
 import com.lftechnology.ticketbookingsystem.admin.service.TicketLocalServiceUtil;
 import com.lftechnology.ticketbookingsystem.admin.service.base.TicketLocalServiceBaseImpl;
@@ -41,13 +45,13 @@ public class TicketLocalServiceImpl extends TicketLocalServiceBaseImpl {
 	 * Never reference this interface directly. Always use {@link com.lftechnology.ticketbookingsystem.admin.service.TicketLocalServiceUtil} to access the ticket local service.
 	 */
 	
-	public Ticket addTicket(Ticket ticket) 
+	public Ticket addTicket(Ticket ticket) throws SystemException 
 	{
 		Ticket newTicket= null;
 		
 		try {
-			newTicket = TicketLocalServiceUtil.getTicket(ticket.getId());
-		} catch (PortalException | SystemException e) {
+			newTicket = ticketPersistence.create(counterLocalService.increment(Ticket.class.getName()));
+		} catch (SystemException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -55,7 +59,14 @@ public class TicketLocalServiceImpl extends TicketLocalServiceBaseImpl {
 		newTicket.setTicketname(ticket.getTicketname());
 		newTicket.setPrice(ticket.getPrice());
 		
+		newTicket.setCompanyId(ticket.getCompanyId());
+		newTicket.setGroupId(ticket.getGroupId());
+		
+		newTicket = ticketPersistence.update(newTicket, false);
+		
+	
 		return newTicket;
+		
 	}
 	
 	
@@ -73,5 +84,30 @@ public class TicketLocalServiceImpl extends TicketLocalServiceBaseImpl {
 			//Commit changes to dB
 			ticketPersistence.update(newTicket, true);
 		return newTicket;
+	}
+	public Ticket get(long id) throws SystemException
+	{
+		Ticket ticket = ticketPersistence.fetchByPrimaryKey(id);
+		return ticket;
+	}
+	
+	
+	public List<Ticket> fecthAll() throws SystemException
+	{
+		return  ticketPersistence.findAll();
+		
+		
+	}
+	
+	public Ticket delete(long id) throws SystemException, PortalException
+	{
+		Ticket ticket = null;
+		try {
+			ticket = ticketPersistence.remove(id);
+		} catch (NoSuchTicketException | SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ticket;			
 	}
 }

@@ -14,7 +14,11 @@
 
 package com.lftechnology.ticketbookingsystem.admin.service.impl;
 
+import java.util.List;
+
+import com.lftechnology.ticketbookingsystem.admin.NoSuchHallException;
 import com.lftechnology.ticketbookingsystem.admin.model.Hall;
+import com.lftechnology.ticketbookingsystem.admin.model.Shift;
 import com.lftechnology.ticketbookingsystem.admin.service.HallLocalServiceUtil;
 import com.lftechnology.ticketbookingsystem.admin.service.base.HallLocalServiceBaseImpl;
 import com.liferay.portal.kernel.exception.PortalException;
@@ -39,13 +43,13 @@ public class HallLocalServiceImpl extends HallLocalServiceBaseImpl {
 	 *
 	 * Never reference this interface directly. Always use {@link com.lftechnology.ticketbookingsystem.admin.service.HallLocalServiceUtil} to access the hall local service.
 	 */
-	public Hall addHall(Hall hall)
+	public Hall addHall(Hall hall) throws SystemException
 	{
 		Hall newHall= null;
 		
 		try {
-			newHall = HallLocalServiceUtil.getHall(hall.getId());
-		} catch (PortalException | SystemException e) {
+			newHall = hallPersistence.create(counterLocalService.increment(Hall.class.getName()));
+		} catch (SystemException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -53,8 +57,18 @@ public class HallLocalServiceImpl extends HallLocalServiceBaseImpl {
 		newHall.setHallname(hall.getHallname());
 		newHall.setContact_no(hall.getContact_no());
 		
+		newHall.setCompanyId(hall.getCompanyId());
+		newHall.setGroupId(hall.getGroupId());
+		
+		//commit changees to the db
+	
+		newHall = hallPersistence.update(newHall, false);
+	
+		
 		return newHall;
 	}
+	
+	
 	public Hall update(Hall hall) throws PortalException, SystemException {
 		Hall newHall =	HallLocalServiceUtil
 					.getHall(hall.getId());
@@ -71,6 +85,30 @@ public class HallLocalServiceImpl extends HallLocalServiceBaseImpl {
 		return newHall;
 	}
 	
+	public Hall get(long id) throws SystemException
+	{
+		Hall hall = hallPersistence.fetchByPrimaryKey(id);
+		return hall;
+	}
 	
+	
+	public List<Hall> fecthAll() throws SystemException
+	{
+		return  hallPersistence.findAll();
+		
+		
+	}
+	
+	public Hall delete(long id) throws SystemException, PortalException
+	{
+		Hall hall = null;
+		try {
+			hall = hallPersistence.remove(id);
+		} catch (NoSuchHallException | SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return hall;			
+	}
 	
 }

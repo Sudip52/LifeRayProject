@@ -118,6 +118,18 @@ public class ShiftLocalServiceClp implements ShiftLocalService {
 		_methodParameterTypes19 = new String[] {
 				"com.lftechnology.ticketbookingsystem.admin.model.Shift"
 			};
+
+		_methodName20 = "get";
+
+		_methodParameterTypes20 = new String[] { "long" };
+
+		_methodName21 = "fecthAll";
+
+		_methodParameterTypes21 = new String[] {  };
+
+		_methodName22 = "delete";
+
+		_methodParameterTypes22 = new String[] { "long" };
 	}
 
 	public com.lftechnology.ticketbookingsystem.admin.model.Shift addShift(
@@ -670,6 +682,93 @@ public class ShiftLocalServiceClp implements ShiftLocalService {
 		return (com.lftechnology.ticketbookingsystem.admin.model.Shift)ClpSerializer.translateOutput(returnObj);
 	}
 
+	public com.lftechnology.ticketbookingsystem.admin.model.Shift get(long id)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName20,
+					_methodParameterTypes20, new Object[] { id });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.lftechnology.ticketbookingsystem.admin.model.Shift)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public java.util.List<com.lftechnology.ticketbookingsystem.admin.model.Shift> fecthAll()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName21,
+					_methodParameterTypes21, new Object[] {  });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.lftechnology.ticketbookingsystem.admin.model.Shift>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public com.lftechnology.ticketbookingsystem.admin.model.Shift delete(
+		long id)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName22,
+					_methodParameterTypes22, new Object[] { id });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.lftechnology.ticketbookingsystem.admin.model.Shift)ClpSerializer.translateOutput(returnObj);
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -709,4 +808,10 @@ public class ShiftLocalServiceClp implements ShiftLocalService {
 	private String[] _methodParameterTypes17;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
+	private String _methodName20;
+	private String[] _methodParameterTypes20;
+	private String _methodName21;
+	private String[] _methodParameterTypes21;
+	private String _methodName22;
+	private String[] _methodParameterTypes22;
 }

@@ -279,18 +279,21 @@ public class MovieLocalServiceUtil {
 		return getService().update(movie);
 	}
 
-	public static com.lftechnology.ticketbookingsystem.admin.model.Shift addShift(
-		com.lftechnology.ticketbookingsystem.admin.model.Shift shift)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		return getService().addShift(shift);
+	public static com.lftechnology.ticketbookingsystem.admin.model.Movie get(
+		long id) throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().get(id);
 	}
 
-	public static com.lftechnology.ticketbookingsystem.admin.model.Hall addHall(
-		com.lftechnology.ticketbookingsystem.admin.model.Hall hall)
+	public static java.util.List<com.lftechnology.ticketbookingsystem.admin.model.Movie> fecthAll()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().fecthAll();
+	}
+
+	public static com.lftechnology.ticketbookingsystem.admin.model.Movie delete(
+		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		return getService().addHall(hall);
+		return getService().delete(id);
 	}
 
 	public static void clearService() {

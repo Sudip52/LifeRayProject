@@ -251,4 +251,15 @@ public interface HallLocalService extends BaseLocalService, InvokableLocalServic
 		com.lftechnology.ticketbookingsystem.admin.model.Hall hall)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public com.lftechnology.ticketbookingsystem.admin.model.Hall get(long id)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List<com.lftechnology.ticketbookingsystem.admin.model.Hall> fecthAll()
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public com.lftechnology.ticketbookingsystem.admin.model.Hall delete(long id)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 }

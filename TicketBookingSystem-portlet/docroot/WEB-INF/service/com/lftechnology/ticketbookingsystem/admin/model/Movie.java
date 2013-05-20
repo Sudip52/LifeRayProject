@@ -17,7 +17,7 @@ package com.lftechnology.ticketbookingsystem.admin.model;
 import com.liferay.portal.model.PersistedModel;
 
 /**
- * The extended model interface for the Movie service. Represents a row in the &quot;ADMN_Movie&quot; database table, with each column mapped to a property of this class.
+ * The extended model interface for the Movie service. Represents a row in the &quot;AD_Movie&quot; database table, with each column mapped to a property of this class.
  *
  * @author sudipshrestha
  * @see MovieModel

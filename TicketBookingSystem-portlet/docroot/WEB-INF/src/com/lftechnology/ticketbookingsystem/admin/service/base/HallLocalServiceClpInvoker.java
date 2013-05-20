@@ -124,6 +124,18 @@ public class HallLocalServiceClpInvoker {
 		_methodParameterTypes55 = new String[] {
 				"com.lftechnology.ticketbookingsystem.admin.model.Hall"
 			};
+
+		_methodName56 = "get";
+
+		_methodParameterTypes56 = new String[] { "long" };
+
+		_methodName57 = "fecthAll";
+
+		_methodParameterTypes57 = new String[] {  };
+
+		_methodName58 = "delete";
+
+		_methodParameterTypes58 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -235,6 +247,21 @@ public class HallLocalServiceClpInvoker {
 			return HallLocalServiceUtil.update((com.lftechnology.ticketbookingsystem.admin.model.Hall)arguments[0]);
 		}
 
+		if (_methodName56.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes56, parameterTypes)) {
+			return HallLocalServiceUtil.get(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName57.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes57, parameterTypes)) {
+			return HallLocalServiceUtil.fecthAll();
+		}
+
+		if (_methodName58.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
+			return HallLocalServiceUtil.delete(((Long)arguments[0]).longValue());
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -278,4 +305,10 @@ public class HallLocalServiceClpInvoker {
 	private String[] _methodParameterTypes54;
 	private String _methodName55;
 	private String[] _methodParameterTypes55;
+	private String _methodName56;
+	private String[] _methodParameterTypes56;
+	private String _methodName57;
+	private String[] _methodParameterTypes57;
+	private String _methodName58;
+	private String[] _methodParameterTypes58;
 }

@@ -17,13 +17,13 @@ public class ValidatorUtil {
 		 
 		if (Validator.isNull(movie.getMoviename()))
 		{
-			SessionErrors.add(request, "MovieNameIsRequired");
+			SessionErrors.add(request, "movieNameIsRequired");
 			isValidSucess = false;
 			
 		}
 		if (Validator.isNull(movie.getDirectorname()))
 		{
-			SessionErrors.add(request, "DirectorNameIsRequired");
+			SessionErrors.add(request, "directorNameIsRequired");
 			isValidSucess = false;
 		}
 		return isValidSucess;		
@@ -34,7 +34,7 @@ public class ValidatorUtil {
 		
 		if(Validator.isNull(shift.getShiftname()))
 		{
-			SessionErrors.add(request,"ShiftNameIsRequired");
+			SessionErrors.add(request,"shiftNameIsRequired");
 			isValidateSucess = false;
 		}
 		return isValidateSucess;
@@ -45,7 +45,7 @@ public class ValidatorUtil {
 		
 		if(Validator.isNull(hall.getHallname()))
 		{
-			SessionErrors.add(request,"HallNameIsRequired");
+			SessionErrors.add(request,"hallNameIsRequired");
 			isValidateSucess = false;
 		}
 		return isValidateSucess;
@@ -57,13 +57,13 @@ public class ValidatorUtil {
 		
 		if(Validator.isNull(ticket.getTicketname()))
 		{
-			SessionErrors.add(request,"TicketNameIsRequired");
+			SessionErrors.add(request,"ticketNameIsRequired");
 			isValidateSucess = false;
 		}
 		
 		if (Validator.isNull(ticket.getPrice()))
 		{
-			SessionErrors.add(request, "TicketPriceIsRequired");
+			SessionErrors.add(request, "ticketPriceIsRequired");
 		}
 		return isValidateSucess;
 	}

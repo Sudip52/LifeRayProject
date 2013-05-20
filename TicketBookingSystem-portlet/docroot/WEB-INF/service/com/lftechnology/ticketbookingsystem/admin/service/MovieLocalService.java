@@ -251,13 +251,15 @@ public interface MovieLocalService extends BaseLocalService,
 		com.lftechnology.ticketbookingsystem.admin.model.Movie movie)
 		throws com.liferay.portal.kernel.exception.PortalException;
 
-	public com.lftechnology.ticketbookingsystem.admin.model.Shift addShift(
-		com.lftechnology.ticketbookingsystem.admin.model.Shift shift)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException;
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public com.lftechnology.ticketbookingsystem.admin.model.Movie get(long id)
+		throws com.liferay.portal.kernel.exception.SystemException;
 
-	public com.lftechnology.ticketbookingsystem.admin.model.Hall addHall(
-		com.lftechnology.ticketbookingsystem.admin.model.Hall hall)
+	public java.util.List<com.lftechnology.ticketbookingsystem.admin.model.Movie> fecthAll()
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public com.lftechnology.ticketbookingsystem.admin.model.Movie delete(
+		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 }

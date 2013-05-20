@@ -273,6 +273,23 @@ public class TicketLocalServiceWrapper implements TicketLocalService,
 		return _ticketLocalService.update(ticket);
 	}
 
+	public com.lftechnology.ticketbookingsystem.admin.model.Ticket get(long id)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _ticketLocalService.get(id);
+	}
+
+	public java.util.List<com.lftechnology.ticketbookingsystem.admin.model.Ticket> fecthAll()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _ticketLocalService.fecthAll();
+	}
+
+	public com.lftechnology.ticketbookingsystem.admin.model.Ticket delete(
+		long id)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _ticketLocalService.delete(id);
+	}
+
 	/**
 	 * @deprecated Renamed to {@link #getWrappedService}
 	 */

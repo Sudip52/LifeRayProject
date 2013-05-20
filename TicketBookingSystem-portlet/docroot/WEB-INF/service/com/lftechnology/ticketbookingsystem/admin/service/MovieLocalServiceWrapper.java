@@ -272,18 +272,21 @@ public class MovieLocalServiceWrapper implements MovieLocalService,
 		return _movieLocalService.update(movie);
 	}
 
-	public com.lftechnology.ticketbookingsystem.admin.model.Shift addShift(
-		com.lftechnology.ticketbookingsystem.admin.model.Shift shift)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		return _movieLocalService.addShift(shift);
+	public com.lftechnology.ticketbookingsystem.admin.model.Movie get(long id)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _movieLocalService.get(id);
 	}
 
-	public com.lftechnology.ticketbookingsystem.admin.model.Hall addHall(
-		com.lftechnology.ticketbookingsystem.admin.model.Hall hall)
+	public java.util.List<com.lftechnology.ticketbookingsystem.admin.model.Movie> fecthAll()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _movieLocalService.fecthAll();
+	}
+
+	public com.lftechnology.ticketbookingsystem.admin.model.Movie delete(
+		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		return _movieLocalService.addHall(hall);
+		return _movieLocalService.delete(id);
 	}
 
 	/**

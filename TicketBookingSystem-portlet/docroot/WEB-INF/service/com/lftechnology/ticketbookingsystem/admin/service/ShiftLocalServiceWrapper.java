@@ -271,6 +271,23 @@ public class ShiftLocalServiceWrapper implements ShiftLocalService,
 		return _shiftLocalService.update(shift);
 	}
 
+	public com.lftechnology.ticketbookingsystem.admin.model.Shift get(long id)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _shiftLocalService.get(id);
+	}
+
+	public java.util.List<com.lftechnology.ticketbookingsystem.admin.model.Shift> fecthAll()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _shiftLocalService.fecthAll();
+	}
+
+	public com.lftechnology.ticketbookingsystem.admin.model.Shift delete(
+		long id)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _shiftLocalService.delete(id);
+	}
+
 	/**
 	 * @deprecated Renamed to {@link #getWrappedService}
 	 */

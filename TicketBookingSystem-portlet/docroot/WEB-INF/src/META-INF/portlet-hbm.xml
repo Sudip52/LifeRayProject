@@ -6,7 +6,7 @@
 	<import class="com.lftechnology.ticketbookingsystem.admin.model.Movie" />
 	<import class="com.lftechnology.ticketbookingsystem.admin.model.Shift" />
 	<import class="com.lftechnology.ticketbookingsystem.admin.model.Ticket" />
-	<class name="com.lftechnology.ticketbookingsystem.admin.model.impl.HallImpl" table="ADMN_Hall">
+	<class name="com.lftechnology.ticketbookingsystem.admin.model.impl.HallImpl" table="AD_Hall">
 		<cache usage="read-write" />
 		<id name="id" column="id_" type="long">
 			<generator class="assigned" />
@@ -16,7 +16,7 @@
 		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
-	<class name="com.lftechnology.ticketbookingsystem.admin.model.impl.MovieImpl" table="ADMN_Movie">
+	<class name="com.lftechnology.ticketbookingsystem.admin.model.impl.MovieImpl" table="AD_Movie">
 		<cache usage="read-write" />
 		<id name="id" column="id_" type="long">
 			<generator class="assigned" />
@@ -29,7 +29,7 @@
 		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
-	<class name="com.lftechnology.ticketbookingsystem.admin.model.impl.ShiftImpl" table="ADMN_Shift">
+	<class name="com.lftechnology.ticketbookingsystem.admin.model.impl.ShiftImpl" table="AD_Shift">
 		<cache usage="read-write" />
 		<id name="id" column="id_" type="long">
 			<generator class="assigned" />
@@ -39,7 +39,7 @@
 		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
-	<class name="com.lftechnology.ticketbookingsystem.admin.model.impl.TicketImpl" table="ADMN_Ticket">
+	<class name="com.lftechnology.ticketbookingsystem.admin.model.impl.TicketImpl" table="AD_Ticket">
 		<cache usage="read-write" />
 		<id name="id" column="id_" type="long">
 			<generator class="assigned" />

@@ -69,19 +69,19 @@
 		</attributes>
 	</mapped-superclass>
 	<entity class="com.lftechnology.ticketbookingsystem.admin.model.impl.HallImpl" name="Hall">
-		<table name="ADMN_Hall" />
+		<table name="AD_Hall" />
 		<attributes />
 	</entity>
 	<entity class="com.lftechnology.ticketbookingsystem.admin.model.impl.MovieImpl" name="Movie">
-		<table name="ADMN_Movie" />
+		<table name="AD_Movie" />
 		<attributes />
 	</entity>
 	<entity class="com.lftechnology.ticketbookingsystem.admin.model.impl.ShiftImpl" name="Shift">
-		<table name="ADMN_Shift" />
+		<table name="AD_Shift" />
 		<attributes />
 	</entity>
 	<entity class="com.lftechnology.ticketbookingsystem.admin.model.impl.TicketImpl" name="Ticket">
-		<table name="ADMN_Ticket" />
+		<table name="AD_Ticket" />
 		<attributes />
 	</entity>
 </entity-mappings>
